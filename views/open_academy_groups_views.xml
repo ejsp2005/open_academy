@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+
+    <!-- explicit list view definition -->
+
+    <record id="open_academy_groups_view_tree" model="ir.ui.view">
+      <field name="name">open.academy.groups.tree</field>
+      <field name="model">open_academy_groups.open_academy_groups</field>
+      <field name="arch" type="xml">
+        <tree string="Open Academy Groups List">
+          <field name="name" string="Title"/>
+          <field name="description" string="Description"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record id="open_academy_groups_action" model="ir.actions.act_window">
+      <field name="name">Group Title</field>
+      <field name="res_model">open_academy_groups.open_academy_groups</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

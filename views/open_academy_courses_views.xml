@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+
+        <!-- explicit list view definition -->
+
+        <record id="open_academy_courses_view_tree" model="ir.ui.view">
+            <field name="name">open.academy.courses.tree</field>
+            <field name="model">open_academy_courses.open_academy_courses</field>
+            <field name="arch" type="xml">
+                <tree string="Open Academy Courses List">
+                    <field name="name" string="Title"/>
+                    <field name="description" string="Description"/>
+                    <field name="type" string="Type"/>
+                    <field name="availability" string="Availability"/>
+                    <field name="startdate" string="Start date"/>
+                    <field name="enddate" string="End date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- explicit form view definition -->
+
+        <record model="ir.ui.view" id="film_list_view_form">
+            <field name="name">open_academy_courses.open_academy_courses.form</field>
+            <field name="model">open_academy_courses.open_academy_courses</field>
+            <field name="arch" type="xml">
+                <form string="Course">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" string="Course Title"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Information">
+                                <group>
+                                    <group>
+                                        <field name="description" string="Description" />
+                                        <field name="type" string="Type" />
+                                        <field name="availability" string="Availability" />
+                                    </group>
+                                    <group>
+                                        <field name="language" string="Language"/>
+                                        <field name="startdate" string="Start date"/>
+                                        <field name="enddate" string="End date"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record id="open_academy_courses_action" model="ir.actions.act_window">
+            <field name="name">Course Title</field>
+            <field name="res_model">open_academy_courses.open_academy_courses</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
