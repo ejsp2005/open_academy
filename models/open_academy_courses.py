@@ -25,25 +25,7 @@ class OpenAcademyCourses(models.Model):
         selection=[
             ('spanish', 'Spanish'),
             ('english', 'English'),
-            ('portuguese', 'Portuguese'),
-            ('french', 'French'),
-            ('german', 'German'),
-            ('japanese', 'Japanese'),
-            ('chinese', 'Chinese'),
-            ('arab', 'Arab'),
-            ('russian', 'Russian'),
-            ('chinese', 'Chinese'),
-            ('turkish', 'Turkish'),
-            ('korean', 'Korean')
         ]
     )
-    startdate = fields.Date(
-        copy=False, 
-        required=True,
-        default=lambda self: fields.Date.add(fields.Date.today(), days=15)
-    )
-    enddate = fields.Date(
-        copy=False, 
-        required=True,
-        default=lambda self: fields.Date.add(fields.Date.today(), days=25)
-    )
+    sessions_id = fields.One2many('open_academy_sessions.open_academy_sessions', 'courses_id', string='Sessions')
+    groups_id = fields.One2many('open_academy_groups.open_academy_groups', 'courses_id', string='Groups')

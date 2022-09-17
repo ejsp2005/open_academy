@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+
+        <!-- explicit list view definition -->
+        <record id="open_academy_sessions_view_tree" model="ir.ui.view">
+            <field name="name">open.academy.sessions.tree</field>
+            <field name="model">open_academy_sessions.open_academy_sessions</field>
+            <field name="arch" type="xml">
+                <tree string="Open Academy Sessions List">
+                    <field name="name" string="Title"/>
+                    <field name="courses_id" string="Course"/>
+                    <field name="startdate" string="Start date"/>
+                    <field name="duration" string="Duration (hours)"/>
+                    <field name="responsible_id" string="Responsible" />
+                    <field name="instructor_id" string="Instructor" />
+                    <field name="partners_ids" string="Assistants"/>
+                    <field name="seats" string="Seats" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- explicit form view definition -->
+        <record id="open_academy_sessions_view_form" model="ir.ui.view">
+            <field name="name">open_academy_sessions.open_academy_sessions.form</field>
+            <field name="model">open_academy_sessions.open_academy_sessions</field>
+            <field name="arch" type="xml">
+                <form string="Session">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for= "name" class="oe_edit_only" string= "Session Title" />
+                            <h2>
+                                <field name= "name" />
+                            </h2>
+                        </div>
+                        <label for= "courses_id" class="oe_edit_only" string= "Course Title" />
+                        <h3>
+                            <field name="courses_id" string="Course"/>
+                        </h3>
+                        <notebook>
+                            <page string="Information">
+                                <group>
+                                    <field name="responsible_id" string="Responsible" />
+                                    <field name="instructor_id" string="Instructor" />
+                                    <field name="partners_ids" string="Assistants"/>
+                                </group>
+                                <group>
+                                    <field name="startdate" string="Start date"/>
+                                    <field name="duration" string="Duration (hours)"/>
+                                    <field name="seats" string="Seats"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search views -->
+        <record id="open_academy_sessions_view_search" model="ir.ui.view">
+            <field name="name">open.academy.sessions.search</field>
+            <field name="model">open_academy_sessions.open_academy_sessions</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- <field name="name" string="Title"/> -->
+                    <field name="courses_id" string="Course"/>
+                    <field name="responsible_id" string="Responsible"/>
+                    <field name="instructor_id" string="Instructor"/>
+                    <separator/>
+                    <filter string="Responsible" name="responsible_id" context="{'group_by': 'responsible_id'}"/>
+                    <filter string="Instructor" name="instructor_id" context="{'group_by': 'instructor_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record id="open_academy_sessions_action" model="ir.actions.act_window">
+            <field name="name">Sessions</field>
+            <field name="res_model">open_academy_sessions.open_academy_sessions</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
