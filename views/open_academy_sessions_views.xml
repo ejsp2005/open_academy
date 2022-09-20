@@ -11,9 +11,8 @@
                     <field name="courses_id" string="Course"/>
                     <field name="startdate" string="Start date"/>
                     <field name="duration" string="Duration (hours)"/>
-                    <field name="responsible_id" string="Responsible" />
                     <field name="instructor_id" string="Instructor" />
-                    <field name="partners_ids" string="Assistants"/>
+                    <field name="partners_ids" string="Attendees"/>
                     <field name="seats" string="Seats" />
                 </tree>
             </field>
@@ -39,9 +38,8 @@
                         <notebook>
                             <page string="Information">
                                 <group>
-                                    <field name="responsible_id" string="Responsible" />
-                                    <field name="instructor_id" string="Instructor" />
-                                    <field name="partners_ids" string="Assistants"/>
+                                    <field name="instructor_id" string="Instructor" domain="[('instructor', '=', 'true')]" />
+                                    <field name="partners_ids" string="Attendees"/>
                                 </group>
                                 <group>
                                     <field name="startdate" string="Start date"/>
@@ -63,10 +61,8 @@
                 <search>
                     <!-- <field name="name" string="Title"/> -->
                     <field name="courses_id" string="Course"/>
-                    <field name="responsible_id" string="Responsible"/>
                     <field name="instructor_id" string="Instructor"/>
                     <separator/>
-                    <filter string="Responsible" name="responsible_id" context="{'group_by': 'responsible_id'}"/>
                     <filter string="Instructor" name="instructor_id" context="{'group_by': 'instructor_id'}"/>
                 </search>
             </field>

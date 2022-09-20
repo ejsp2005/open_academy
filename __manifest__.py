@@ -25,6 +25,7 @@
 
     # always loaded
     'data': [
+        'views/res_partner.xml',
         'views/open_academy_sessions_views.xml',
         'views/open_academy_groups_views.xml',
         'views/open_academy_courses_views.xml',

@@ -2,7 +2,6 @@
 
 from odoo import models, fields
 
-
 class OpenAcademyCourses(models.Model):
     _name = 'open_academy_courses.open_academy_courses'
     _description = 'open_academy_courses.open_academy_courses'
@@ -18,7 +17,10 @@ class OpenAcademyCourses(models.Model):
             ('blended', 'Blended')
         ]
     )
-    availability = fields.Boolean( required=True, default=False )
+    availability = fields.Boolean( 
+        required=True, 
+        default=False 
+    )
     language = fields.Selection(
         required=True, 
         default='spanish',
@@ -27,5 +29,17 @@ class OpenAcademyCourses(models.Model):
             ('english', 'English'),
         ]
     )
-    sessions_id = fields.One2many('open_academy_sessions.open_academy_sessions', 'courses_id', string='Sessions')
-    groups_id = fields.One2many('open_academy_groups.open_academy_groups', 'courses_id', string='Groups')
+    responsible_id = fields.Many2one(
+        "res.users", 
+        string="Responsible user"
+    )
+    sessions_id = fields.One2many(
+        'open_academy_sessions.open_academy_sessions', 
+        'courses_id', 
+        string='Sessions'
+    )
+    groups_id = fields.One2many(
+        'open_academy_groups.open_academy_groups', 
+        'courses_id', 
+        string='Groups'
+    )

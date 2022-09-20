@@ -10,4 +10,8 @@ class OpenAcademyGroups(models.Model):
     name = fields.Char( required=True )
     description = fields.Text()
 
-    courses_id = fields.Many2one("open_academy_courses.open_academy_courses", string="Course", required=True)
+    courses_id = fields.Many2one(
+        "open_academy_courses.open_academy_courses", 
+        string="Course", 
+        required=True
+    )
