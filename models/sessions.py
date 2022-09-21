@@ -4,8 +4,8 @@ from odoo import models, fields
 
 
 class OpenAcademySessions(models.Model):
-    _name = 'open_academy_sessions.open_academy_sessions'
-    _description = 'open_academy_sessions.open_academy_sessions'
+    _name = 'oa.sessions'
+    _description = 'oa.sessions'
 
     name = fields.Char( required=True )
     startdate = fields.Date(
@@ -25,7 +25,7 @@ class OpenAcademySessions(models.Model):
     seats = fields.Integer()
     
     courses_id = fields.Many2one(
-        "open_academy_courses.open_academy_courses", 
+        "oa.courses", 
         string="Course", 
         required=True
     )

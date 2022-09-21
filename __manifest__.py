@@ -26,9 +26,9 @@
     # always loaded
     'data': [
         'views/res_partner.xml',
-        'views/open_academy_sessions_views.xml',
-        'views/open_academy_groups_views.xml',
-        'views/open_academy_courses_views.xml',
+        'views/sessions_views.xml',
+        'views/groups_views.xml',
+        'views/courses_views.xml',
         'views/menu_views.xml',
         'security/ir.model.access.csv',
         # 'views/templates.xml',

@@ -3,37 +3,37 @@
     <!-- Academy -->
     <menuitem 
         name="Open Academy" 
-        id="mnu_open_academy_menu_root"/>
+        id="mnu_oa_menu_root"/>
 
     <!-- Courses parent menu item -->
-    <menuitem name="Courses" id="mnu_open_academy_courses" parent="mnu_open_academy_menu_root"/>
+    <menuitem name="Courses" id="mnu_oa_courses" parent="mnu_oa_menu_root"/>
         <!-- Courses -->
         <menuitem 
             name="Courses" 
-            id="mnu_open_academy_couses_list" 
-            parent="mnu_open_academy_courses" 
-            action="open_academy_courses_action"/>
+            id="mnu_oa_couses_list" 
+            parent="mnu_oa_courses" 
+            action="oa_courses_action"/>
     
         <!-- Sessions -->
         <menuitem 
             name="Sessions" 
-            id="mnu_open_academy_sessions_list" 
-            parent="mnu_open_academy_courses" 
-            action="open_academy_sessions_action"/>
+            id="mnu_oa_sessions_list" 
+            parent="mnu_oa_courses" 
+            action="oa_sessions_action"/>
     
         <!-- Groups -->
         <menuitem 
             name="Groups" 
-            id="mnu_open_academy_groups_list" 
-            parent="mnu_open_academy_courses" 
-            action="open_academy_groups_action"/>
+            id="mnu_oa_groups_list" 
+            parent="mnu_oa_courses" 
+            action="oa_groups_action"/>
 
     <!-- Sessions -->
-    <!-- <menuitem name="Sessions" id="mnu_open_academy_sessions" parent="mnu_open_academy_menu_root"/> -->
-        <!-- <menuitem name="Sessions" id="mnu_open_academy_sessions_list" parent="mnu_open_academy_sessions" action="open_academy_sessions_action"/> -->
+    <!-- <menuitem name="Sessions" id="mnu_oa_sessions" parent="mnu_oa_menu_root"/> -->
+        <!-- <menuitem name="Sessions" id="mnu_oa_sessions_list" parent="mnu_oa_sessions" action="oa_sessions_action"/> -->
 
     <!-- Groups -->
-    <!-- <menuitem name="Groups" id="mnu_open_academy_groups" parent="mnu_open_academy_menu_root"/> -->
-        <!-- <menuitem name="Groups" id="mnu_open_academy_groups_list" parent="mnu_open_academy_groups" action="open_academy_groups_action"/> -->
+    <!-- <menuitem name="Groups" id="mnu_oa_groups" parent="mnu_oa_menu_root"/> -->
+        <!-- <menuitem name="Groups" id="mnu_oa_groups_list" parent="mnu_oa_groups" action="oa_groups_action"/> -->
 
 </odoo>

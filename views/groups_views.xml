@@ -2,9 +2,9 @@
   <data>
 
     <!-- explicit list view definition -->
-    <record id="open_academy_groups_view_tree" model="ir.ui.view">
-      <field name="name">open.academy.groups.tree</field>
-      <field name="model">open_academy_groups.open_academy_groups</field>
+    <record id="oa_groups_view_tree" model="ir.ui.view">
+      <field name="name">oa.groups.tree</field>
+      <field name="model">oa.groups</field>
       <field name="arch" type="xml">
         <tree string="Open Academy Groups List">
           <field name="name" string="Title"/>
@@ -15,9 +15,9 @@
     </record>
 
     <!-- explicit form view definition -->
-    <record model="ir.ui.view" id="open_academy_groups_view_form">
-      <field name="name">open_academy_groups.open_academy_groups.form</field>
-      <field name="model">open_academy_groups.open_academy_groups</field>
+    <record model="ir.ui.view" id="oa_groups_view_form">
+      <field name="name">oa.groups.form</field>
+      <field name="model">oa.groups</field>
       <field name="arch" type="xml">
         <form string="Session">
           <sheet>
@@ -41,9 +41,9 @@
     </record>
 
     <!-- Search views -->
-    <record id="open_academy_groups_view_search" model="ir.ui.view">
-      <field name="name">open.academy.groups.search</field>
-      <field name="model">open_academy_groups.open_academy_groups</field>
+    <record id="oa_groups_view_search" model="ir.ui.view">
+      <field name="name">oa.groups.search</field>
+      <field name="model">oa.groups</field>
       <field name="arch" type="xml">
         <search>
           <field name="courses_id" string="Course"/>
@@ -54,9 +54,9 @@
     </record>
 
     <!-- actions opening views on models -->
-    <record id="open_academy_groups_action" model="ir.actions.act_window">
+    <record id="oa_groups_action" model="ir.actions.act_window">
       <field name="name">Groups</field>
-      <field name="res_model">open_academy_groups.open_academy_groups</field>
+      <field name="res_model">oa.groups</field>
       <field name="view_mode">tree,form</field>
     </record>
 

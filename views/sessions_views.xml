@@ -2,9 +2,9 @@
     <data>
 
         <!-- explicit list view definition -->
-        <record id="open_academy_sessions_view_tree" model="ir.ui.view">
-            <field name="name">open.academy.sessions.tree</field>
-            <field name="model">open_academy_sessions.open_academy_sessions</field>
+        <record id="oa_sessions_view_tree" model="ir.ui.view">
+            <field name="name">oa.sessions.tree</field>
+            <field name="model">oa.sessions</field>
             <field name="arch" type="xml">
                 <tree string="Open Academy Sessions List">
                     <field name="name" string="Title"/>
@@ -19,9 +19,9 @@
         </record>
 
         <!-- explicit form view definition -->
-        <record id="open_academy_sessions_view_form" model="ir.ui.view">
-            <field name="name">open_academy_sessions.open_academy_sessions.form</field>
-            <field name="model">open_academy_sessions.open_academy_sessions</field>
+        <record id="oa_sessions_view_form" model="ir.ui.view">
+            <field name="name">oa.sessions.form</field>
+            <field name="model">oa.sessions</field>
             <field name="arch" type="xml">
                 <form string="Session">
                     <sheet>
@@ -54,9 +54,9 @@
         </record>
 
         <!-- Search views -->
-        <record id="open_academy_sessions_view_search" model="ir.ui.view">
-            <field name="name">open.academy.sessions.search</field>
-            <field name="model">open_academy_sessions.open_academy_sessions</field>
+        <record id="oa_sessions_view_search" model="ir.ui.view">
+            <field name="name">oa.sessions.search</field>
+            <field name="model">oa.sessions</field>
             <field name="arch" type="xml">
                 <search>
                     <!-- <field name="name" string="Title"/> -->
@@ -69,9 +69,9 @@
         </record>
 
         <!-- actions opening views on models -->
-        <record id="open_academy_sessions_action" model="ir.actions.act_window">
+        <record id="oa_sessions_action" model="ir.actions.act_window">
             <field name="name">Sessions</field>
-            <field name="res_model">open_academy_sessions.open_academy_sessions</field>
+            <field name="res_model">oa.sessions</field>
             <field name="view_mode">tree,form</field>
         </record>
 

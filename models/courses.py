@@ -3,8 +3,8 @@
 from odoo import models, fields
 
 class OpenAcademyCourses(models.Model):
-    _name = 'open_academy_courses.open_academy_courses'
-    _description = 'open_academy_courses.open_academy_courses'
+    _name = 'oa.courses'
+    _description = 'oa.courses'
 
     name = fields.Char( required=True )
     description = fields.Text()
@@ -34,12 +34,12 @@ class OpenAcademyCourses(models.Model):
         string="Responsible user"
     )
     sessions_id = fields.One2many(
-        'open_academy_sessions.open_academy_sessions', 
+        'oa.sessions', 
         'courses_id', 
         string='Sessions'
     )
     groups_id = fields.One2many(
-        'open_academy_groups.open_academy_groups', 
+        'oa.groups', 
         'courses_id', 
         string='Groups'
     )
