@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class OpenAcademyCourses(models.Model):
     _name = 'oa.courses'
@@ -43,3 +44,9 @@ class OpenAcademyCourses(models.Model):
     #     'courses_id', 
     #     string='Groups'
     # )
+
+    @api.constrains('name', 'description')
+    def _check_seats_taken(self):
+        for record in self:
+            if record.name == record.description:
+                raise ValidationError("The course name and the course description must be different.")
