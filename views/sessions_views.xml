@@ -12,8 +12,10 @@
                     <field name="startdate" string="Start date"/>
                     <field name="duration" string="Duration (hours)"/>
                     <field name="instructor_id" string="Instructor" />
+                    <field name="active" string="Active" />
                     <field name="partners_ids" string="Attendees"/>
                     <field name="seats" string="Seats" />
+                    <field name="seats_taken" string="Seats taken" widget="progressbar" />
                 </tree>
             </field>
         </record>
@@ -39,12 +41,14 @@
                             <page string="Information">
                                 <group>
                                     <field name="instructor_id" string="Instructor" domain="[('instructor', '=', 'true')]" />
+                                    <field name="active" string="Active" />
                                     <field name="partners_ids" string="Attendees"/>
                                 </group>
                                 <group>
                                     <field name="startdate" string="Start date"/>
                                     <field name="duration" string="Duration (hours)"/>
                                     <field name="seats" string="Seats"/>
+                                    <field name="seats_taken" string="Seats taken" widget="progressbar" />
                                 </group>
                             </page>
                         </notebook>

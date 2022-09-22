@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_oa_courses,oa_courses.open_academy,model_oa_courses,base.group_user,1,1,1,1
-access_oa_groups,oa_groups.open_academy,model_oa_groups,base.group_user,1,1,1,1
 access_oa_sessions,oa_sessions.open_academy,model_oa_sessions,base.group_user,1,1,1,1
 access_res_partner,res_partner.open_academy,model_res_partner,base.group_user,1,1,1,1

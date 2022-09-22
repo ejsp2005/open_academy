@@ -13,7 +13,7 @@
                     <field name="responsible_id" string="Responsible" />
                     <field name="availability" string="Availability"/>
                     <field name="sessions_id" string="Sessions"/>
-                    <field name="groups_id" string="Groups"/>
+                    <!-- <field name="groups_id" string="Groups"/> -->
                 </tree>
             </field>
         </record>
@@ -51,11 +51,11 @@
                                     <field name="sessions_id"/>
                                 </div>
                             </page>
-                            <page string="Groups">
+                            <!-- <page string="Groups">
                                 <div>
                                     <field name="groups_id"/>
                                 </div>
-                            </page>
+                            </page> -->
                         </notebook>
                     </sheet>
                 </form>

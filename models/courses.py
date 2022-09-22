@@ -38,8 +38,8 @@ class OpenAcademyCourses(models.Model):
         'courses_id', 
         string='Sessions'
     )
-    groups_id = fields.One2many(
-        'oa.groups', 
-        'courses_id', 
-        string='Groups'
-    )
+    # groups_id = fields.One2many(
+    #     'oa.groups', 
+    #     'courses_id', 
+    #     string='Groups'
+    # )

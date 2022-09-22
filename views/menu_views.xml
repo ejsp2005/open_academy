@@ -22,11 +22,11 @@
             action="oa_sessions_action"/>
     
         <!-- Groups -->
-        <menuitem 
+        <!-- <menuitem 
             name="Groups" 
             id="mnu_oa_groups_list" 
             parent="mnu_oa_courses" 
-            action="oa_groups_action"/>
+            action="oa_groups_action"/> -->
 
     <!-- Sessions -->
     <!-- <menuitem name="Sessions" id="mnu_oa_sessions" parent="mnu_oa_menu_root"/> -->
