@@ -49,4 +49,4 @@ class OpenAcademyCourses(models.Model):
     def _check_seats_taken(self):
         for record in self:
             if record.name == record.description:
-                raise ValidationError("The course name and the course description must be different.")
+                raise ValidationError("The name and description of the course must be different.")

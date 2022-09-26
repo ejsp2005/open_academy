@@ -1,0 +1,49 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- =======================================================================
+                                          Courses
+             ======================================================================= -->
+
+        <record id="oa_courses_1" model="oa.courses">
+            <field name="name">First steps in Odoo</field>
+            <field name="description">This is a training tutorial and evaluation for a job.</field>
+            <field name="type">online</field>
+            <field name="availability">true</field>
+            <field name="language">spanish</field>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="oa_courses_2" model="oa.courses">
+            <field name="name">Full-Stack Developer</field>
+            <field name="description">Turn a programmer into a Full-Stack Developer.</field>
+            <field name="type">online</field>
+            <field name="availability">true</field>
+            <field name="language">spanish</field>
+            <field name="responsible_id" ref="base.partner_demo"/>
+        </record>
+        <record id="oa_courses_3" model="oa.courses">
+            <field name="name">Course in Project Management</field>
+            <field name="description">Training given to a professional in Project Management.</field>
+            <field name="type">blended</field>
+            <field name="availability">false</field>
+            <field name="language">spanish</field>
+            <field name="responsible_id" ref="base.partner_demo"/>
+        </record>
+        <record id="oa_courses_4" model="oa.courses">
+            <field name="name">Machine Learning</field>
+            <field name="description">Training in Machine Learning for advanced programmers with knowledge in AI.</field>
+            <field name="type">blended</field>
+            <field name="availability">true</field>
+            <field name="language">spanish</field>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="oa_courses_5" model="oa.courses">
+            <field name="name">Android Development</field>
+            <field name="description">Training in Android Development using Android Studio.</field>
+            <field name="type">face-to-face</field>
+            <field name="availability">false</field>
+            <field name="language">spanish</field>
+            <field name="responsible_id" ref="base.partner_demo"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- =======================================================================
+                                          Attendees
+             ======================================================================= -->
+
+		<record id="oa_attendees_1" model="oa.sessions">
+			<field name="courses_id" ref="oa_courses_1"/>
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27')])]"/>
+		</record>
+		<!-- <record id="oa_attendees_2" model="oa.sessions">
+			<field name="courses_id" ref="oa_courses_2"/>
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17')])]"/>
+		</record>
+		<record id="oa_attendees_3" model="oa.sessions">
+			<field name="courses_id" ref="oa_courses_3"/>
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27'), ref('base.res_partner_address_1'), ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18')])]"/>
+		</record>
+		<record id="oa_attendees_4" model="oa.sessions">
+			<field name="courses_id" ref="oa_courses_4"/>
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17'), ref('base.res_partner_address_2')])]"/>
+		</record>
+		<record id="oa_attendees_5" model="oa.sessions">
+			<field name="courses_id" ref="oa_courses_5"/>
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_7'), ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_32')])]"/>
+		</record> -->
+    </data>
+</odoo>

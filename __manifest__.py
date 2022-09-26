@@ -34,9 +34,12 @@
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
+    'demo': [
+        'demo/courses_demo.xml',
+        'demo/sessions_demo.xml',
+        'demo/res_partner_demo.xml',
+        'demo/attendees_demo.xml',
+    ],
     
     'auto_install': False,
     'application': True,

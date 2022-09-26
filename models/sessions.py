@@ -50,13 +50,16 @@ class OpenAcademySessions(models.Model):
     @api.onchange("partners_ids")
     def _compute_seats_taken(self):
         for record in self:
-            record.seats_taken = (len(record.partners_ids)*100) // record.seats
+            if record.seats > 0:
+                record.seats_taken = (len(record.partners_ids)*100) // record.seats
+            else:
+                record.seats_taken = 0
 
     # Instructor must not be among the attendees
-    @api.constrains('partners_ids', 'instructor')
+    @api.constrains('partners_ids', 'instructor_id')
     def _check_attendees(self):
         for record in self:
-            if record.instructor == record.partners_ids:
-                raise ValidationError("The following person should not be among the attendees because he/she is the instructor: %s" % record.instructor)
+            if record.instructor_id == record.partners_ids:
+                raise ValidationError("The following person should not be among the attendees because he/she is the instructor: %s" % record.instructor_id)
     
 
