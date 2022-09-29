@@ -1,100 +1,110 @@
 <odoo>
-    <data noupdate="1">
+  <data noupdate="1">
 
-        <!-- =======================================================================
+      <!-- =======================================================================
                                         Sessions
-            ======================================================================= -->
+           ======================================================================= -->
 
-      <record id="oa_sessions_1" model="oa.sessions">
-        <field name="name">Sessions 1</field>
-        <field name="startdate">2022-10-03</field>
-        <field name="duration">1</field>
-        <field name="instructor_id" ref="base.res_partner_address_28"/>
-        <field name="courses_id" ref="oa_courses_1" />
-        <field name="active">true</field>
-        <field name="seats">15</field>
-      </record>
-      <record id="oa_sessions_2" model="oa.sessions">
-        <field name="name">Sessions 2</field>
-        <field name="startdate">2022-10-16</field>
-        <field name="duration">2</field>
-        <field name="instructor_id" ref="base.res_partner_address_15"/>
-        <field name="courses_id" ref="oa_courses_1" />
-        <field name="active">true</field>
-        <field name="seats">20</field>
-      </record>
-      <record id="oa_sessions_3" model="oa.sessions">
-        <field name="name">Sessions 3</field>
-        <field name="startdate">2022-10-22</field>
-        <field name="duration">1</field>
-        <field name="instructor_id" ref="base.res_partner_address_16"/>
-        <field name="courses_id" ref="oa_courses_1" />
-        <field name="active">true</field>
-        <field name="seats">11</field>
-      </record>
-      <record id="oa_sessions_4" model="oa.sessions">
-        <field name="name">Sessions 4</field>
-        <field name="startdate">2022-11-03</field>
-        <field name="duration">3</field>
-        <field name="instructor_id" ref="base.res_partner_address_31"/>
-        <field name="courses_id" ref="oa_courses_2" />
-        <field name="active">true</field>
-        <field name="seats">15</field>
-      </record>
-      <record id="oa_sessions_5" model="oa.sessions">
-        <field name="name">Sessions 5</field>
-        <field name="startdate">2022-10-19</field>
-        <field name="duration">2</field>
-        <field name="instructor_id" ref="base.res_partner_address_3"/>
-        <field name="courses_id" ref="oa_courses_3" />
-        <field name="active">true</field>
-        <field name="seats">15</field>
-      </record>
-      <record id="oa_sessions_6" model="oa.sessions">
-        <field name="name">Sessions 6</field>
-        <field name="startdate">2022-10-08</field>
-        <field name="duration">1</field>
-        <field name="instructor_id" ref="base.res_partner_address_4"/>
-        <field name="courses_id" ref="oa_courses_5" />
-        <field name="active">true</field>
-        <field name="seats">15</field>
-      </record>
-      <record id="oa_sessions_7" model="oa.sessions">
-        <field name="name">Sessions 7</field>
-        <field name="startdate">2022-10-15</field>
-        <field name="duration">2</field>
-        <field name="instructor_id" ref="base.res_partner_address_3"/>
-        <field name="courses_id" ref="oa_courses_4" />
-        <field name="active">true</field>
-        <field name="seats">15</field>
-      </record>
-      <record id="oa_sessions_8" model="oa.sessions">
-        <field name="name">Sessions 8</field>
-        <field name="startdate">2022-10-10</field>
-        <field name="duration">3</field>
-        <field name="instructor_id" ref="base.res_partner_address_10"/>
-        <field name="courses_id" ref="oa_courses_3" />
-        <field name="active">true</field>
-        <field name="seats">20</field>
-      </record>
-      <record id="oa_sessions_9" model="oa.sessions">
-        <field name="name">Sessions 9</field>
-        <field name="startdate">2022-10-24</field>
-        <field name="duration">2</field>
-        <field name="instructor_id" ref="base.res_partner_address_25"/>
-        <field name="courses_id" ref="oa_courses_5" />
-        <field name="active">true</field>
-        <field name="seats">10</field>
-      </record>
-      <record id="oa_sessions_10" model="oa.sessions">
-        <field name="name">Sessions 10</field>
-        <field name="startdate">2022-10-06</field>
-        <field name="duration">1</field>
-        <field name="instructor_id" ref="base.res_partner_address_11"/>
-        <field name="courses_id" ref="oa_courses_2" />
-        <field name="active">true</field>
-        <field name="seats">10</field>
-      </record>
+    <record id="oa_sessions_1" model="oa.sessions">
+      <field name="name">Sessions 1</field>
+      <field name="startdate">2022-10-03</field>
+      <field name="duration">1</field>
+      <field name="instructor_id" ref="base.res_partner_address_28"/>
+      <field name="courses_id" ref="oa_courses_1" />
+      <field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27'), ref('base.res_partner_address_1'), ref('base.res_partner_address_24'), ref('base.res_partner_address_13'), ref('base.res_partner_address_32')])]"/>
+      <field name="active">true</field>
+      <field name="seats">15</field>
+    </record>
+    <record id="oa_sessions_2" model="oa.sessions">
+      <field name="name">Sessions 2</field>
+      <field name="startdate">2022-10-16</field>
+      <field name="duration">2</field>
+      <field name="instructor_id" ref="base.res_partner_address_15"/>
+      <field name="courses_id" ref="oa_courses_1" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17')])]"/>
+      <field name="active">true</field>
+      <field name="seats">20</field>
+    </record>
+    <record id="oa_sessions_3" model="oa.sessions">
+      <field name="name">Sessions 3</field>
+      <field name="startdate">2022-10-22</field>
+      <field name="duration">1</field>
+      <field name="instructor_id" ref="base.res_partner_address_16"/>
+      <field name="courses_id" ref="oa_courses_1" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27'), ref('base.res_partner_address_1'), ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18')])]"/>
+      <field name="active">true</field>
+      <field name="seats">11</field>
+    </record>
+    <record id="oa_sessions_4" model="oa.sessions">
+      <field name="name">Sessions 4</field>
+      <field name="startdate">2022-11-03</field>
+      <field name="duration">3</field>
+      <field name="instructor_id" ref="base.res_partner_address_31"/>
+      <field name="courses_id" ref="oa_courses_2" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17'), ref('base.res_partner_address_2')])]"/>
+      <field name="active">true</field>
+      <field name="seats">15</field>
+    </record>
+    <record id="oa_sessions_5" model="oa.sessions">
+      <field name="name">Sessions 5</field>
+      <field name="startdate">2022-10-19</field>
+      <field name="duration">2</field>
+      <field name="instructor_id" ref="base.res_partner_address_3"/>
+      <field name="courses_id" ref="oa_courses_3" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_7'), ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_32')])]"/>
+      <field name="active">true</field>
+      <field name="seats">15</field>
+    </record>
+    <record id="oa_sessions_6" model="oa.sessions">
+      <field name="name">Sessions 6</field>
+      <field name="startdate">2022-10-08</field>
+      <field name="duration">1</field>
+      <field name="instructor_id" ref="base.res_partner_address_4"/>
+      <field name="courses_id" ref="oa_courses_5" />
+      <field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27'), ref('base.res_partner_address_1'), ref('base.res_partner_address_24'), ref('base.res_partner_address_13'), ref('base.res_partner_address_32')])]"/>
+      <field name="active">true</field>
+      <field name="seats">15</field>
+    </record>
+    <record id="oa_sessions_7" model="oa.sessions">
+      <field name="name">Sessions 7</field>
+      <field name="startdate">2022-10-15</field>
+      <field name="duration">2</field>
+      <field name="instructor_id" ref="base.res_partner_address_3"/>
+      <field name="courses_id" ref="oa_courses_4" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17')])]"/>
+      <field name="active">true</field>
+      <field name="seats">15</field>
+    </record>
+    <record id="oa_sessions_8" model="oa.sessions">
+      <field name="name">Sessions 8</field>
+      <field name="startdate">2022-10-10</field>
+      <field name="duration">3</field>
+      <field name="instructor_id" ref="base.res_partner_address_10"/>
+      <field name="courses_id" ref="oa_courses_3" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_27'), ref('base.res_partner_address_1'), ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18')])]"/>
+      <field name="active">true</field>
+      <field name="seats">20</field>
+    </record>
+    <record id="oa_sessions_9" model="oa.sessions">
+      <field name="name">Sessions 9</field>
+      <field name="startdate">2022-10-24</field>
+      <field name="duration">2</field>
+      <field name="instructor_id" ref="base.res_partner_address_25"/>
+      <field name="courses_id" ref="oa_courses_5" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_24'), ref('base.res_partner_address_34'), ref('base.res_partner_address_18'), ref('base.res_partner_address_17'), ref('base.res_partner_address_2')])]"/>
+      <field name="active">true</field>
+      <field name="seats">10</field>
+    </record>
+    <record id="oa_sessions_10" model="oa.sessions">
+      <field name="name">Sessions 10</field>
+      <field name="startdate">2022-10-06</field>
+      <field name="duration">1</field>
+      <field name="instructor_id" ref="base.res_partner_address_11"/>
+      <field name="courses_id" ref="oa_courses_2" />
+			<field name="partners_ids" eval="[(6, 0, [ref('base.res_partner_address_7'), ref('base.res_partner_address_14'), ref('base.res_partner_address_33'), ref('base.res_partner_address_13'), ref('base.res_partner_address_32')])]"/>
+      <field name="active">true</field>
+      <field name="seats">10</field>
+    </record>
 
-    </data>
+  </data>
 </odoo>

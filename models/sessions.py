@@ -36,30 +36,41 @@ class OpenAcademySessions(models.Model):
     # Attendees
     partners_ids = fields.Many2many("res.partner")
 
-    # Seats taken must not exceed the seats number    
-    @api.constrains('partners_ids')
-    def _check_seats_taken(self):
-        for record in self:
-            if len(record.partners_ids) > record.seats:
-                raise ValidationError("Number of seats must be up to: %s" % record.seats)
-    
-
-    # Progress bar that shows percent of taken seats against the number of seats    
+    # Progress bar that shows percent of taken seats against the number of seats
     seats_taken = fields.Integer(compute="_compute_seats_taken")
-    
-    @api.onchange("partners_ids")
+
+    # Percent of taken seats
+    @api.depends("seats", "partners_ids")
     def _compute_seats_taken(self):
-        for record in self:
-            if record.seats > 0:
-                record.seats_taken = (len(record.partners_ids)*100) // record.seats
+        for rec in self:
+            if rec.seats > 0:
+                rec.seats_taken = (len(rec.partners_ids)*100) // rec.seats
             else:
-                record.seats_taken = 0
+                rec.seats_taken = 0
 
     # Instructor must not be among the attendees
     @api.constrains('partners_ids', 'instructor_id')
     def _check_attendees(self):
         for record in self:
-            if record.instructor_id == record.partners_ids:
-                raise ValidationError("The following person should not be among the attendees because he/she is the instructor: %s" % record.instructor_id)
+            if record.instructor_id in record.partners_ids:
+                raise ValidationError("The following person should not be among the attendees because he/she is the instructor.")
     
+    # Seats number must not be negative or less than the number of attendees
+    # Attendees must not exceed the seats number    
+    @api.onchange('seats', 'partners_ids')
+    def _verify_valid_seats(self):
+        if self.seats < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect 'seats' value",
+                    'message': "The number of available seats must not be negative",
+                },
+            }
+        if self.seats < len(self.partners_ids):
+            return {
+                'warning': {
+                    'title': "Too many attendees",
+                    'message': "Increase seats or remove excess attendees",
+                },
+            }
 

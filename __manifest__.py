@@ -25,6 +25,17 @@
 
     # always loaded
     'data': [
+        #======================
+        #   Demo data files
+        #   always to load
+        #======================
+        'demo/courses_demo.xml',
+        'demo/sessions_demo.xml',
+        'demo/res_partner_demo.xml',
+        
+        #======================
+        #      View files
+        #======================
         'views/res_partner.xml',
         'views/sessions_views.xml',
         # 'views/groups_views.xml',
@@ -32,14 +43,12 @@
         'views/menu_views.xml',
         'security/ir.model.access.csv',
         # 'views/templates.xml',
+        
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/courses_demo.xml',
-        'demo/sessions_demo.xml',
-        'demo/res_partner_demo.xml',
-        'demo/attendees_demo.xml',
-    ],
+    # 'demo': [
+    #     'demo/demo.xml',
+    # ],
     
     'auto_install': False,
     'application': True,
