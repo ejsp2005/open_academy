@@ -1,16 +1,38 @@
 <odoo>
     <data>
+        <record id="oa_sessions_view_calendar" model="ir.ui.view">
+            <field name="name">oa.sessions.calendar</field>
+            <field name="model">oa.sessions</field>
+            <field name="arch" type="xml">
+                <calendar string="Session Request" date_start="startdate" event_open_popup="true" mode="month" color="instructor_id" quick_add="False">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- <record id="action_mobile_service_request" model="ir.actions.act_window">
+            <field name="name">Service Request</field>
+            <field name="res_model">mobile.service</field>
+            <field name="view_mode">calendar,tree,form,kanban,pivot,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">           Click to Create a New Record.       </p>
+            </field>
+        </record> -->
+
+        <!-- <calendar string="Session" date_start="startdate" color="instructor_id">
+                        <field name="name" string="Test..."/>
+                    </calendar> -->
 
         <!-- explicit list view definition -->
         <record id="oa_sessions_view_tree" model="ir.ui.view">
             <field name="name">oa.sessions.tree</field>
             <field name="model">oa.sessions</field>
             <field name="arch" type="xml">
-                <tree string="Open Academy Sessions List">
+                <tree string="Open Academy Sessions List" decoration-primary= "duration &lt; 5" decoration-danger= "duration &gt; 15">
                     <field name="name" string="Title"/>
                     <field name="courses_id" string="Course"/>
                     <field name="startdate" string="Start date"/>
-                    <field name="duration" string="Duration (hours)"/>
+                    <field name="duration" string="Duration (days)"/>
                     <field name="instructor_id" string="Instructor" />
                     <field name="active" string="Active" />
                     <field name="partners_ids" string="Attendees"/>
@@ -46,7 +68,7 @@
                                 </group>
                                 <group>
                                     <field name="startdate" string="Start date"/>
-                                    <field name="duration" string="Duration (hours)"/>
+                                    <field name="duration" string="Duration (days)"/>
                                     <field name="seats" string="Seats"/>
                                     <field name="seats_taken" string="Seats taken" widget="progressbar" />
                                 </group>
@@ -76,7 +98,7 @@
         <record id="oa_sessions_action" model="ir.actions.act_window">
             <field name="name">Sessions</field>
             <field name="res_model">oa.sessions</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,search,calendar</field>
         </record>
 
     </data>

@@ -6,7 +6,12 @@
             <field name="name">oa.courses.tree</field>
             <field name="model">oa.courses</field>
             <field name="arch" type="xml">
-                <tree string="Open Academy Courses List">
+                <tree 
+                    string="Open Academy Courses List" 
+                    decoration-it="availability==False" 
+                    decoration-muted="availability==False" 
+                    decoration-bf="type=='online'"
+                >
                     <field name="name" string="Title"/>
                     <field name="description" string="Description"/>
                     <field name="type" string="Type"/>
