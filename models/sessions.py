@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from ast import If
+from datetime import datetime, date, timedelta
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
@@ -15,6 +16,15 @@ class OpenAcademySessions(models.Model):
         required=True,
         default=lambda self: fields.Date.add(fields.Date.today(), days=15)
     )
+    # enddate = fields.Date(compute="_set_enddate")
+    
+    # @api.depends("startdate", "duration")
+    # def _set_enddate(self):
+    #     for rec in self:
+    #         if rec.startdate:
+    #             enddate = str(fields.Datetime.to_datetime(rec.startdate) + rec.duration)
+    #             rec.enddate = enddate
+        
     duration = fields.Integer(
         copy=False, 
         required=True,
