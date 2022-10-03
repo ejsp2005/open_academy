@@ -24,6 +24,8 @@ class OpenAcademySessions(models.Model):
             if rec.startdate and rec.duration:
                 enddate = datetime.strptime(str(rec.startdate), "%Y-%m-%d") + timedelta(days=rec.duration)
                 rec.enddate = enddate.strftime("%Y-%m-%d")
+            else:
+                rec.enddate = rec.startdate
         
     duration = fields.Integer(
         copy=False, 
