@@ -101,9 +101,12 @@
             <field name="name">oa.sessions.graph</field>
             <field name="model">oa.sessions</field>
             <field name="arch" type="xml">
-                <graph string="Attendees by session">
-                    <field name="courses_id" string="Courses" type="row"/>
-                    <field name="partners_ids" string="Attendees" type="measure"/>
+                <graph string="Attendees by session" type="bar">
+                    <field name="courses_id" string="Courses"/>
+                    <field name="seats" string="Seats" type="measures"/>
+                    <field name="duration" string="Duration" type="measures"/>
+                    <field name="duration" string="Duration" type="measures"/>
+                    <field name="instructor_id" string="Instructor" type="measures"/>
                 </graph>
             </field>
         </record>
