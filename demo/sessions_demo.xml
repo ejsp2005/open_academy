@@ -8,6 +8,7 @@
     <record id="oa_sessions_1" model="oa.sessions">
       <field name="name">Sessions 1</field>
       <field name="startdate">2022-10-03</field>
+      <field name="enddate">2022-10-03</field>
       <field name="duration">10</field>
       <field name="instructor_id" ref="base.res_partner_address_28"/>
       <field name="courses_id" ref="oa_courses_1" />
@@ -18,6 +19,7 @@
     <record id="oa_sessions_2" model="oa.sessions">
       <field name="name">Sessions 2</field>
       <field name="startdate">2022-10-16</field>
+      <field name="enddate">2022-10-16</field>
       <field name="duration">15</field>
       <field name="instructor_id" ref="base.res_partner_address_15"/>
       <field name="courses_id" ref="oa_courses_1" />
@@ -28,6 +30,7 @@
     <record id="oa_sessions_3" model="oa.sessions">
       <field name="name">Sessions 3</field>
       <field name="startdate">2022-10-22</field>
+      <field name="enddate">2022-10-22</field>
       <field name="duration">10</field>
       <field name="instructor_id" ref="base.res_partner_address_16"/>
       <field name="courses_id" ref="oa_courses_1" />
@@ -38,6 +41,7 @@
     <record id="oa_sessions_4" model="oa.sessions">
       <field name="name">Sessions 4</field>
       <field name="startdate">2022-11-03</field>
+      <field name="enddate">2022-11-03</field>
       <field name="duration">3</field>
       <field name="instructor_id" ref="base.res_partner_address_31"/>
       <field name="courses_id" ref="oa_courses_2" />
@@ -48,6 +52,7 @@
     <record id="oa_sessions_5" model="oa.sessions">
       <field name="name">Sessions 5</field>
       <field name="startdate">2022-10-19</field>
+      <field name="enddate">2022-10-19</field>
       <field name="duration">2</field>
       <field name="instructor_id" ref="base.res_partner_address_3"/>
       <field name="courses_id" ref="oa_courses_3" />
@@ -58,6 +63,7 @@
     <record id="oa_sessions_6" model="oa.sessions">
       <field name="name">Sessions 6</field>
       <field name="startdate">2022-10-08</field>
+      <field name="enddate">2022-10-08</field>
       <field name="duration">10</field>
       <field name="instructor_id" ref="base.res_partner_address_4"/>
       <field name="courses_id" ref="oa_courses_5" />
@@ -68,6 +74,7 @@
     <record id="oa_sessions_7" model="oa.sessions">
       <field name="name">Sessions 7</field>
       <field name="startdate">2022-10-15</field>
+      <field name="enddate">2022-10-15</field>
       <field name="duration">12</field>
       <field name="instructor_id" ref="base.res_partner_address_3"/>
       <field name="courses_id" ref="oa_courses_4" />
@@ -78,6 +85,7 @@
     <record id="oa_sessions_8" model="oa.sessions">
       <field name="name">Sessions 8</field>
       <field name="startdate">2022-10-10</field>
+      <field name="enddate">2022-10-10</field>
       <field name="duration">3</field>
       <field name="instructor_id" ref="base.res_partner_address_10"/>
       <field name="courses_id" ref="oa_courses_3" />
@@ -88,6 +96,7 @@
     <record id="oa_sessions_9" model="oa.sessions">
       <field name="name">Sessions 9</field>
       <field name="startdate">2022-10-24</field>
+      <field name="enddate">2022-10-24</field>
       <field name="duration">6</field>
       <field name="instructor_id" ref="base.res_partner_address_25"/>
       <field name="courses_id" ref="oa_courses_5" />
@@ -98,6 +107,7 @@
     <record id="oa_sessions_10" model="oa.sessions">
       <field name="name">Sessions 10</field>
       <field name="startdate">2022-10-06</field>
+      <field name="enddate">2022-10-06</field>
       <field name="duration">8</field>
       <field name="instructor_id" ref="base.res_partner_address_11"/>
       <field name="courses_id" ref="oa_courses_2" />
