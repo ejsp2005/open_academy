@@ -16,14 +16,14 @@ class OpenAcademySessions(models.Model):
         required=True,
         default=lambda self: fields.Date.add(fields.Date.today(), days=15)
     )
-    # enddate = fields.Date(compute="_set_enddate")
+    enddate = fields.Date(compute="_set_enddate")
     
-    # @api.depends("startdate", "duration")
-    # def _set_enddate(self):
-    #     for rec in self:
-    #         if rec.startdate:
-    #             enddate = str(fields.Datetime.to_datetime(rec.startdate) + rec.duration)
-    #             rec.enddate = enddate
+    @api.depends("startdate", "duration")
+    def _set_enddate(self):
+        for rec in self:
+            if rec.startdate and rec.duration:
+                enddate = datetime.strptime(str(rec.startdate), "%Y-%m-%d") + timedelta(days=rec.duration)
+                rec.enddate = enddate.strftime("%Y-%m-%d")
         
     duration = fields.Integer(
         copy=False, 
