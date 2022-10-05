@@ -38,12 +38,10 @@
         #======================
         'views/res_partner.xml',
         'views/sessions_views.xml',
-        # 'views/groups_views.xml',
         'views/courses_views.xml',
         'views/menu_views.xml',
         'security/ir.model.access.csv',
         # 'views/templates.xml',
-        
     ],
     # only loaded in demonstration mode
     # 'demo': [

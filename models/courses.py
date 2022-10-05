@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 # seed the pseudorandom number generator
 from random import seed, random
@@ -14,7 +14,7 @@ class OpenAcademyCourses(models.Model):
         seed(random()*10)
         # generate some random numbers
         
-        return "course_name_" + str(int(random() * 10000))
+        return _("course_name_") + str(int(random() * 10000))
     
     name = fields.Char( 
         required=True, 
@@ -26,9 +26,9 @@ class OpenAcademyCourses(models.Model):
         default='online',
         required=True, 
         selection=[
-            ('online', 'Online'),
-            ('face-to-face', 'Face-to-face'),
-            ('blended', 'Blended')
+            ('online', _('Online')),
+            ('face-to-face', _('Face-to-face')),
+            ('blended', _('Blended'))
         ]
     )
     availability = fields.Boolean( 
@@ -39,18 +39,18 @@ class OpenAcademyCourses(models.Model):
         required=True, 
         default='spanish',
         selection=[
-            ('spanish', 'Spanish'),
-            ('english', 'English'),
+            ('spanish', _('Spanish')),
+            ('english', _('English')),
         ]
     )
     responsible_id = fields.Many2one(
         "res.users", 
-        string="Responsible user"
+        string=_("Responsible user")
     )
     sessions_id = fields.One2many(
         'oa.sessions', 
         'courses_id', 
-        string='Sessions'
+        string=_('Sessions')
     )
     # groups_id = fields.One2many(
     #     'oa.groups', 
@@ -65,7 +65,7 @@ class OpenAcademyCourses(models.Model):
     #             raise ValidationError("The name and description of the course must be different.")
     
     _sql_constraints = [
-        ('name_unique', 'UNIQUE(name)', 'The title of the course must be unique.'),
-        ('name_description_check', 'CHECK(name != description)', "The title and description of the course must be different.")
+        ('name_unique', 'UNIQUE(name)', _('The title of the course must be unique.')),
+        ('name_description_check', 'CHECK(name != description)', _("The title and description of the course must be different."))
     ]
     

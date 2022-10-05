@@ -2,7 +2,7 @@
 
 from ast import If
 from datetime import datetime, date, timedelta
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -34,11 +34,11 @@ class OpenAcademySessions(models.Model):
     )
     instructor_id = fields.Many2one(
         "res.partner", 
-        string="Instructor"
+        string=_("Instructor")
     )
     courses_id = fields.Many2one(
         "oa.courses", 
-        string="Course", 
+        string=_("Course"), 
         required=True
     )
     active = fields.Boolean(default=True)
@@ -65,7 +65,7 @@ class OpenAcademySessions(models.Model):
     def _check_attendees(self):
         for record in self:
             if record.instructor_id in record.partners_ids:
-                raise ValidationError("The following person should not be among the attendees because he/she is the instructor.")
+                raise ValidationError(_("The following person should not be among the attendees because he/she is the instructor."))
     
     # Seats number must not be negative or less than the number of attendees
     # Attendees must not exceed the seats number    
@@ -74,15 +74,15 @@ class OpenAcademySessions(models.Model):
         if self.seats < 0:
             return {
                 'warning': {
-                    'title': "Incorrect 'seats' value",
-                    'message': "The number of available seats must not be negative",
+                    'title': _("Incorrect 'seats' value"),
+                    'message': _("The number of available seats must not be negative"),
                 },
             }
         if self.seats < len(self.partners_ids):
             return {
                 'warning': {
-                    'title': "Too many attendees",
-                    'message': "Increase seats or remove excess attendees",
+                    'title': _("Too many attendees"),
+                    'message': _("Increase seats or remove excess attendees"),
                 },
             }
 
