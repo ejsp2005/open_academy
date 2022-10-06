@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from fnmatch import translate
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 # seed the pseudorandom number generator
@@ -19,9 +20,10 @@ class OpenAcademyCourses(models.Model):
     name = fields.Char( 
         required=True, 
         copy=False, 
+        translate=True,
         default=_get_random_name() 
     )
-    description = fields.Text()
+    description = fields.Text(translate=True)
     type = fields.Selection(
         default='online',
         required=True, 

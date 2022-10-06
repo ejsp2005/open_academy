@@ -10,7 +10,10 @@ class OpenAcademySessions(models.Model):
     _name = 'oa.sessions'
     _description = 'oa.sessions'
 
-    name = fields.Char( required=True )
+    name = fields.Char( 
+        required=True,
+        translate=True
+    )
     startdate = fields.Date(
         copy=False, 
         required=True,
